@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="lab-4-5"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-13 08:46:10 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xMzswODowMDowNyBBTTsyNzM2"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xMzswODozNzoxMyBBTTs1O1VzZXI7REVTS1RPUC1KMzlQMU5UOzIwMjYtMDctMTM7MDg6MDA6MDcgQU07bGFiLTQtNSAtIENvcHkuZnByZzs3MjA0"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xMzswODo0NjoxMCBBTTszOzI4NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="scoreA" type="Integer" array="False" size=""/>
+            <declare name="scoreB" type="Integer" array="False" size=""/>
+            <declare name="pointsA" type="Integer" array="False" size=""/>
+            <declare name="pointsB" type="Integer" array="False" size=""/>
+            <input variable="scoreA"/>
+            <input variable="scoreB"/>
+            <if expression="scoreA &gt; scoreB">
+                <then>
+                    <assign variable="pointsA" expression="3"/>
+                </then>
+                <else>
+                    <if expression="scoreA == scoreB">
+                        <then>
+                            <assign variable="pointsA" expression="1"/>
+                        </then>
+                        <else>
+                            <assign variable="pointsA" expression="0"/>
+                        </else>
+                    </if>
+                    <if expression="scoreB == 0">
+                        <then>
+                            <assign variable="pointsA" expression="pointsA + 1"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+            <if expression="scoreB &gt; scoreA">
+                <then>
+                    <assign variable="pointsB" expression="3"/>
+                </then>
+                <else>
+                    <if expression="scoreB == scoreA">
+                        <then>
+                            <assign variable="pointsB" expression="1"/>
+                        </then>
+                        <else>
+                            <assign variable="pointsB" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="scoreA == 0">
+                <then>
+                    <assign variable="pointsB" expression="pointsB + 1"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="pointsA" newline="True"/>
+            <output expression="pointsB" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

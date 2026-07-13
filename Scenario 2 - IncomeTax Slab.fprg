@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Scenario 2 - IncomeTax Slab"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-06 08:41:31 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wNjswODozMjoxMSBBTTsyNzM4"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wNjswODo0MTozMSBBTTsxOzI4NDg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalTax" type="Real" array="False" size=""/>
+            <declare name="income" type="Real" array="False" size=""/>
+            <input variable="income"/>
+            <if expression="income&lt;= 50000">
+                <then>
+                    <assign variable="totalTax" expression="0"/>
+                </then>
+                <else>
+                    <if expression="income&lt;=100000">
+                        <then>
+                            <assign variable="totalTax" expression="(income-50000)*0.01"/>
+                        </then>
+                        <else>
+                            <assign variable="totalTax" expression="500 + (income-100000)*0.02"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="totalTax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

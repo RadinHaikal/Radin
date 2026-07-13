@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="lab-04-1"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-06 08:30:01 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wNjswODowOTowMCBBTTsyNzQw"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wNjswODozMDowMSBBTTsxOzI4NDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="kwh" type="Integer" array="False" size=""/>
+            <input variable="kwh"/>
+            <declare name="totalBill" type="Real" array="False" size=""/>
+            <if expression="kwh &lt;=100">
+                <then>
+                    <assign variable="totalBill" expression="kwh*0.30"/>
+                </then>
+                <else>
+                    <if expression="kwh&lt;= 200">
+                        <then>
+                            <assign variable="totalBill" expression="30+(kwh-100)*0.50"/>
+                        </then>
+                        <else>
+                            <assign variable="totalBill" expression="80 +(kwh-200)*0.75"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="totalBill" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Scenario 7 Thermostat"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-13 09:11:52 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xMzswOTowMzozNCBBTTsyNzQw"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xMzswOToxMTo1MiBBTTsxOzI4NDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="tempRoom" type="Real" array="False" size=""/>
+            <declare name="tempTarget" type="Real" array="False" size=""/>
+            <declare name="power" type="Real" array="False" size=""/>
+            <input variable="tempRoom"/>
+            <input variable="tempTarget"/>
+            <if expression="tempRoom &lt; tempTarget">
+                <then>
+                    <assign variable="power" expression="(tempTarget-tempRoom) * 10"/>
+                </then>
+                <else>
+                    <if expression="tempRoom &gt; tempTarget">
+                        <then>
+                            <assign variable="power" expression="(tempRoom - tempTarget)* 8"/>
+                        </then>
+                        <else>
+                            <assign variable="power" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="power &gt; 100">
+                <then>
+                    <assign variable="power" expression="100"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="power" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

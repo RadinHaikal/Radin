@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Scenario 3 ParkingFee"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-06 09:19:26 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wNjswODo0MzoyNyBBTTsyNzQ3"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wNjswOToxOToyNiBBTTsyOzI4NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hours" type="Integer" array="False" size=""/>
+            <declare name="parkingFee" type="Real" array="False" size=""/>
+            <input variable="hours"/>
+            <if expression="hours &lt;=2">
+                <then>
+                    <assign variable="parkingFee" expression="0"/>
+                </then>
+                <else>
+                    <if expression="hours &lt;=5">
+                        <then>
+                            <assign variable="parkingFee" expression="(hours - 2)*2.00"/>
+                        </then>
+                        <else>
+                            <assign variable="parkingFee" expression="6 + (hours -5)*3.00"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="parkingFee &gt; 30.00">
+                <then>
+                    <assign variable="parkingFee" expression="30.00"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="parkingFee" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

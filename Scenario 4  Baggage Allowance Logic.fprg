@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Scenario 4  Baggage Allowance Logic"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-06 09:02:34 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wNjswODo1OTowOSBBTTsyNzU0"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wNjswOTowMjozNCBBTTsxOzI4NDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="weight" type="Real" array="False" size=""/>
+            <declare name="finalPrice" type="Real" array="False" size=""/>
+            <declare name="ticketPrice" type="Integer" array="False" size=""/>
+            <input variable="weight"/>
+            <input variable="ticketPrice"/>
+            <if expression="weight == 0">
+                <then>
+                    <assign variable="finalPrice" expression="ticketPrice - 10"/>
+                </then>
+                <else>
+                    <if expression="weight &lt;=15">
+                        <then>
+                            <assign variable="finalPrice" expression="ticketPrice + (weight - 15)*4.00"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+            <output expression="finalPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
